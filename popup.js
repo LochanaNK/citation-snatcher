@@ -7,14 +7,15 @@ document.getElementById("snag-btn").addEventListener("click", async()=>{
         const tabs = await browser.tabs.query({active:true, currentWindow:true});
         const activeTab = tabs[0];
 
-        const response = await browser.tabs.sendMessage(activeTab,id,{action:"snag_data"});
+        const response = await browser.tabs.sendMessage(activeTab.id,{action:"snag_data"});
 
         if(response)
         {
-            const citaion = `${response.author}.(${response.date}).(${response.title})."(${response.selection})".Retrieved from (${response.url})`;
+            const citation = `${response.author}.(${response.date}).(${response.title})."(${response.selection})".Retrieved from (${response.url})`;
 
-            resultBox.value = citaion;
-            statusBox.value = "Copied to clipboard!";
+            resultBox.value = citation;
+            statusDiv.value = "Copied to clipboard!";
+            console.log(resultBox.value);
         }
 
     }catch(error)
