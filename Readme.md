@@ -2,7 +2,7 @@
 
 > **Stop wasting time formatting bibliographies.** Snag citations in seconds directly from your browser.
 
-**Citation Snatcher** is a lightweight Firefox extension designed to streamline research for students and developers. Simply highlight text on any webpage, click the extension, and instantly generate a perfectly formatted citation (APA or IEEE) copied to your clipboard.
+**Citation Snatcher** is a lightweight Firefox extension designed to streamline research for students and developers. Simply highlight text on any webpage, click the extension, and instantly generate a perfectly formatted citation (APA, MLA or IEEE) copied to your clipboard.
 
 It features **"Smart Detection"** logic that can find author names even on complex sites like Wikipedia, news blogs, and academic journals.
 
@@ -41,7 +41,7 @@ Since this is a custom extension, you load it through Firefox's debugging tool.
 1.  **Browse:** Navigate to any article or webpage (e.g., a Wikipedia page).
 2.  **Select:** Highlight the text you want to quote.
 3.  **Click:** Open the **Citation Snatcher** extension icon.
-4.  **Format:** Choose **APA** or **IEEE** from the dropdown menu.
+4.  **Format:** Choose **APA**, **MLA** or **IEEE** from the dropdown menu.
 5.  **Snag:** Click the **"Snag Selection"** button.
 
 ✅ The formatted citation will appear in the text box and be copied to your clipboard!
@@ -57,5 +57,5 @@ citation-snatcher/
 │
 ├── manifest.json   # Configuration: Permissions (activeTab, scripting) and metadata.
 ├── popup.html      # UI: The popup window with the dropdown and buttons.
-├── popup.js        # Logic: Handles the formatting (APA/IEEE) and UI updates.
+├── popup.js        # Logic: Handles the formatting (APA, MLA, IEEE) and UI updates.
 └── content.js      # Script: Injected into the page to scrape Author, Title, and URL.
