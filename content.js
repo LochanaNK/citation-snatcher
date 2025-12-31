@@ -20,7 +20,12 @@ function getSmartAuthor(){
     if(window.location.hostname.includes("wikipedia.org")){
         return "Wikipedia Contributors";
     }
-
+    //method 1: author link
+    const authorLink = document.querySelector('a[rel="author"],a[href*="/author/"]');
+    if(authorLink){
+        return authorLink.innerText.trim();
+    }
+    //method 2 : JSON-LD
     const jsonLd = document.querySelector('script[type="application/ld+json"]');
     if(jsonLd){
         try{
@@ -42,7 +47,7 @@ function getSmartAuthor(){
             console.log("JSON-LD parse failed", error);
         }
     }
-
+    //method 3: common meta tags
     const metaSelectors = [
         'meta[name="author"]',
         'meta[name="twitter:creator"]',
@@ -57,12 +62,8 @@ function getSmartAuthor(){
             return element.content;
         }
     }
-
-    const authorLink = document.querySelector('a[rel="author"]');
-    if(authorLink){
-        return authorLink.innterText;
-    }
-
+   
+    //method 4: og:site_name
     const siteName = document.querySelector('meta[property="og:site_name"]');
     if(siteName && siteName.content){
         return siteName.content;
@@ -78,4 +79,11 @@ function getSmartTitle(){
         return ogTitle.content;
     }
     return document.title;
+}
+function getSiteName(){
+    const siteName = document.querySelector('meta[property="og:site_name]');
+    if(siteName && siteName.content){
+        return siteName.content;
+    }
+    return document.siteName;
 }
