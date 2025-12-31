@@ -12,7 +12,7 @@ It features **"Smart Detection"** logic that can find author names even on compl
 
 * **⚡️ Instant Snagging:** Generate a citation with just two clicks.
 * **📋 Auto-Copy:** The result is automatically copied to your clipboard, ready to paste.
-* **🔄 Multi-Format Support:** Switch between **APA (7th Edition)** and **IEEE** styles via a dropdown menu.
+* **🔄 Multi-Format Support:** Switch between **APA (7th Edition)**, **MLA** and **IEEE** styles via a dropdown menu.
 * **🧠 Smart Author Detection:** Intelligently extracts metadata by checking:
     * **Wikipedia:** Detects community articles and cites "Wikipedia Contributors."
     * **JSON-LD:** Reads hidden SEO data on modern news sites (e.g., NYTimes, Medium).
