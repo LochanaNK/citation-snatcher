@@ -80,3 +80,10 @@ function getSmartTitle(){
     }
     return document.title;
 }
+function getSiteName(){
+    const siteName = document.querySelector('meta[property="og:site_name]');
+    if(siteName && siteName.content){
+        return siteName.content;
+    }
+    return document.siteName;
+}

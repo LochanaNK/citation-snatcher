@@ -54,6 +54,7 @@ function formatCitation(data,format){
     const author = data.author;
     const title = data.title;
     const url = data.url;
+    const siteName = data.siteName;
 
     const today = new Date();
     const accessedDate = `${today.toLocaleString('default', { month: 'short' })}. ${today.getDate()}, ${today.getFullYear()}`;
@@ -75,6 +76,10 @@ function formatCitation(data,format){
 
         return `[1] ${ieeeAuthor}, "${title}," ${domain}, ${pubYear}. [Online]. Available: ${url}. [Accessed: ${accessedDate}].`;
     }
+    else if(format === "mla"){
+        return `${author}. "${title}." ${siteName}, ${url}. Accessed ${accessedDate}.`;
+    }
+
     else{
 
         //APA format
