@@ -21,18 +21,24 @@ It features **"Smart Detection"** logic that can find author names even on compl
 * **🔒 Privacy-First:** All processing happens locally in your browser. No data is sent to external servers.
 
 ---
+## 🛠️ Installation
 
-## 🛠️ Installation (Developer Mode)
+### 🦊 For Firefox (Recommended)
+You can install the extension directly from the official store:
+👉 **[Get Citation Snatcher on Firefox Add-ons](YOUR_AMO_STORE_LINK_HERE)**
 
-Since this is a custom extension, you load it through Firefox's debugging tool.
+---
 
-1.  **Download/Clone** this repository to a folder on your computer.
-2.  Open Firefox and type **`about:debugging`** in the address bar.
-3.  Click on **"This Firefox"** in the left sidebar.
-4.  Click the **"Load Temporary Add-on..."** button.
-5.  Navigate to your folder and select the **`manifest.json`** file.
+### 🌐 For Google Chrome, Brave, Edge, and Opera
+Since the extension utilizes the standard **Manifest V3** structure, you can easily load it manually into any Chromium-based browser:
 
-*The extension icon should now appear in your browser toolbar.*
+1. **Download / Clone** this repository as a ZIP file to your computer and unzip it.
+2. Open your Chromium browser and navigate to **`chrome://extensions/`** in the address bar.
+3. In the top-right corner of the Extensions page, toggle the **"Developer mode"** switch to **ON**.
+4. Click the **"Load unpacked"** button that appears in the top-left corner.
+5. Select the unzipped folder containing your project files (the folder that has your `manifest.json`).
+
+*The Citation Snatcher icon will now appear in your browser toolbar! (You may need to click the puzzle piece 🧩 extension icon to pin it).*
 
 ---
 

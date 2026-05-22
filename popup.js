@@ -76,6 +76,7 @@ function formatCitation(data,format){
 
         return `[1] ${ieeeAuthor}, "${title}," ${domain}, ${pubYear}. [Online]. Available: ${url}. [Accessed: ${accessedDate}].`;
     }
+    //mla format
     else if(format === "mla"){
         return `${author}. "${title}." ${siteName}, ${url}. Accessed ${accessedDate}.`;
     }
