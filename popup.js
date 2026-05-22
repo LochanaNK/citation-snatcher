@@ -28,11 +28,11 @@ document.getElementById("snag-btn").addEventListener("click", async () => {
         target: { tabId: activeTab.id },
         files: ["content.js"],
       });
-      await sednMessageToTab(activeTab.id);
+      await sendMessageToTab(activeTab.id);
     }
   } catch (error) {
     console.error("Dtailed Error:", error);
-    resultBox.valu = `Error: ${error.message}`;
+    resultBox.value = `Error: ${error.message}`;
     statusDiv.textContent = "❌ Failed";
     statusDiv.style.color = "red";
   }
