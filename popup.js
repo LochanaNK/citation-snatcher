@@ -71,14 +71,17 @@ function formatCitation(data, format) {
   const shortMonth = today.toLocaleString("default", { month: "short" });
   const day = today.getDate();
 
+  const isMultiAuthor = author.includes(",") || author.includes(" and ");
   const isSpecialAuthor =
     author.includes("Contributors") ||
     author.toLowerCase() === "unknown author";
-  const nameParts = isSpecialAuthor ? [] : author.trim().split(/\s+/);
+  const nameParts =
+    isSpecialAuthor || isMultiAuthor ? [] : author.trim().split(/\s+/);
 
   //IEEE format
   if (format === "ieee") {
     let ieeeAuthor = author;
+    // Only flip names if it's a single person's name (e.g., "Shan Wang")
     if (nameParts.length > 1) {
       const lastName = nameParts.pop();
       const initials = nameParts
@@ -95,12 +98,15 @@ function formatCitation(data, format) {
   //mla format
   else if (format === "mla") {
     return `${author}. "${title}." ${siteName}, ${url}. Accessed ${accessedDate}.`;
-  } else if (format === "chicago") {
+  }
+
+  //chicago format
+  else if (format === "chicago") {
     let chicagoAuthor = author;
     if (nameParts.length > 1) {
       const lastName = nameParts.pop();
-      const firstName = nameParts.join(" ");
-      chicagoAuthor = `${lastName}, ${firstName}`;
+      const firstNames = nameParts.join(" ");
+      chicagoAuthor = `${lastName}, ${firstNames}`;
     }
     return `${chicagoAuthor}. ${pubYear}. "${title}." ${siteName}. Accessed ${accessedDate}. ${url}.`;
   }
@@ -126,7 +132,7 @@ function formatCitation(data, format) {
     }
     return `[1] ${vancouverAuthor}. ${title}. ${siteName}; ${pubYear} [cited ${pubYear} ${shortMonth} ${day}]. Available from: ${url}`;
   }
-  
+
   //apa format
   else {
     return `${author}. (${pubYear}). ${title}. Retrieved from ${url}`;
